@@ -50,4 +50,10 @@ Here’s how you can get the project running on your machine:
 
 - Access it via http://localhost:8080/WanderNest-Tours-Travels
 
+📸 Screenshots
+
+👩‍💻 Author
+Made with 💡 by Payal Yadav
+Feel free to ⭐ this repo or contribute to its growth!
+
 
