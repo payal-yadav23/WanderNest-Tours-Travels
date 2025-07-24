@@ -33,3 +33,21 @@ Here’s how you can get the project running on your machine:
 1. 📥 **Clone the repository**  
    ```bash
    git clone https://github.com/payal-yadav23/WanderNest-Tours-Travels.git
+   ```
+- 💼 Import into Eclipse or your favorite Java IDE
+
+- As a Dynamic Web Project
+
+3. 🛠️ Configure MySQL database
+
+- Create necessary tables (like travel, users, etc.)
+
+- Update DB connection details in Java files
+
+4. 🌐 Run using Apache Tomcat
+
+- Deploy the project on Tomcat Server
+
+- Access it via http://localhost:8080/WanderNest-Tours-Travels
+
+
