@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome | Tours & Travels</title>
+<style>
+/* Reset and font */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Background Video */
+.bg-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding: 20px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10;
+}
+
+.logo {
+	font-size: 24px;
+	color: white;
+	font-weight: bold;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 22px;
+}
+
+.nav-links li a {
+	position: relative;
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+	transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 0%;
+	height: 2px;
+	background-color: #c2185b; /* dark pink */
+	transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+	color: #c2185b;
+}
+
+.nav-links li a:hover::after {
+	width: 100%;
+}
+
+/* Register/Login Button */
+.login-btn {
+	display: inline-block;
+	padding: 6px 14px;
+	background-color: rgba(142, 0, 77, 0.8);
+	/* dark pink with transparency */
+	color: white !important;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	text-decoration: none;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn:hover {
+	background-color: rgba(182, 0, 99, 1);
+	color: white !important;
+}
+
+/* Center Button */
+.center-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	text-align: center;
+}
+
+.book-btn {
+	padding: 16px 40px;
+	font-size: 24px;
+	background-color: rgba(142, 0, 77, 0.8);
+	/* dark pink with transparency */
+	color: white;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+	background-color: rgba(182, 0, 99, 1); /* fully opaque on hover */
+}
+
+.tagline-small {
+	font-size: 25px;
+	color: white;
+	margin-bottom: 10px;
+	font-weight: 400;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.tagline-large {
+	font-size: 40px;
+	color: white;
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+</style>
+</head>
+<body>
+
+	<!-- Background Video -->
+	<video autoplay muted loop class="bg-video">
+		<source src="home.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="logo">Tripzy Tours</div>
+		<ul class="nav-links">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Tours</a></li>
+			<li><a href="#">Destinations</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Gallery</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Contact Us</a></li>
+			<li><a href="register.html" class="login-btn">Register/Login</a></li>
+		</ul>
+	</nav>
+
+	<!-- Centered Button -->
+	<div class="center-btn">
+		<h2 class="tagline-small">To travel is to live</h2>
+		<h1 class="tagline-large">Your Journey Begins</h1>
+		<a href="register.html"><button class="book-btn">Book My
+				Trip</button></a>
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+@charset "ISO-8859-1";
+
+/* General Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Background Video */
+.bg-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding: 20px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10;
+}
+
+.logo {
+	font-size: 24px;
+	color: white;
+	font-weight: bold;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+
+.nav-links li a {
+	position: relative;
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+	transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 0%;
+	height: 2px;
+	background-color: #c2185b; /* dark pink */
+	transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+	color: #c2185b;
+}
+
+.nav-links li a:hover::after {
+	width: 100%;
+}
+
+/* Center Button Styling */
+.center-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	text-align: center;
+}
+
+.book-btn {
+	padding: 16px 40px;
+	font-size: 24px;
+	background-color: #8e004d;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+	background-color: #b60063;
+}
+
+/* Register/Login Button */
+.login-btn {
+	padding: 6px 14px;
+	border: 2px solid #c2185b;
+	border-radius: 6px;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+	background-color: #c2185b;
+	color: white;
+}
