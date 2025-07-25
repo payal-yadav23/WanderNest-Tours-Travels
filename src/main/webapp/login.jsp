@@ -16,87 +16,79 @@ body {
 	margin: 0;
 }
 
-.form-box {
-	background: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	padding: 30px;
-	border-radius: 12px;
+.container {
+	background: rgba(255, 255, 255, 0.12);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	padding: 40px;
+	border-radius: 14px;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
-	width: 400px;
-}
-
-.message {
-	color: green;
-	font-weight: bold;
 	text-align: center;
-	margin-bottom: 10px;
-	font-size: 18px;
+	width: 700px;
 }
 
 h1 {
 	color: #c2185b;
-	margin-bottom: 20px;
-	text-align: center;
+	font-size: 32px;
+	margin-bottom: 25px;
 }
 
-input[type="email"], input[type="password"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: none;
-	border-radius: 8px;
-	background: rgba(255, 255, 255, 0.9);
+.profiles {
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
 }
 
-button {
-	width: 100%;
-	background-color: #c2185b;
-	color: white;
-	padding: 12px;
-	border: none;
-	border-radius: 8px;
+.profile-box {
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	width: 180px;
+	height: 220px;
+	padding: 20px;
 	cursor: pointer;
-	font-size: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-	background-color: #ad1457;
+.profile-box:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-p {
-	margin-top: 10px;
-	font-size: 20px;
-	text-align: center;
+.profile-box img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 15px;
 }
 
-a {
-	color: #c2185b;
-	text-decoration: none;
+.profile-box h3 {
+	color: #333;
+	font-size: 25px;
 }
+
 </style>
 </head>
 <body>
-	<div class="form-box">
-		<%
-		String msg = (String) request.getAttribute("message");
-		if (msg != null) {
-		%>
-		<div class="message"><%=msg%></div>
-		<%
-		}
-		%>
-
+	<div class="container">
 		<h1>Login to Account</h1>
-		<form action="login" method="post">
-			<input type="email" name="email" placeholder="Email Address" required>
-			<input type="password" name="password" placeholder="Password"
-				required>
-			<button type="submit">Login</button>
-			<p>
-				Don't have an account? <a href="register.html">Register here</a>
-			</p>
-		</form>
+
+		<div class="profiles">
+			<div class="profile-box" onclick="location.href='admin-login.jsp'">
+				<img src="admin.jpg" alt="Admin">
+				<h3>Admin</h3>
+			</div>
+
+			<div class="profile-box" onclick="location.href='agent-login.jsp'">
+				<img src="travelagent.jpg" alt="Travel Agent">
+				<h3>Travel Agent</h3>
+			</div>
+
+			<div class="profile-box" onclick="location.href='customer-login.jsp'">
+				<img src="customer.jpg" alt="Customer">
+				<h3>Customer</h3>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
