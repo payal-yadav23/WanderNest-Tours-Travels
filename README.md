@@ -18,6 +18,7 @@ Built using a mix of frontend and backend technologies:
 ## ✨ Features
 
 ✅ User Registration & Login  
+👩‍💻 Travel Agent Registration & Login
 🗺️ Travel Booking System  
 🔒 Secure Authentication  
 📊 Admin Dashboard *(coming soon)*  
