@@ -93,7 +93,7 @@ a {
 		%>
 
 		<h1>Agent Login</h1>
-		<form action="agentLogin" method="get">
+		<form action="agentLogin" method="post">
 			<label for="email">Agent Email ID</label> <input type="text"
 				id="email" name="email" placeholder="Enter your Email ID" required>
 			<label for="password">Password</label> <input type="password"

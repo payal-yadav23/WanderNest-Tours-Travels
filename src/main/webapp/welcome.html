@@ -4,18 +4,20 @@
 <meta charset="ISO-8859-1">
 <title>Welcome | Tours & Travels</title>
 <style>
-/* Reset and font */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+	font-family: Arial, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body, html {
-	height: 100%;
 	width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 /* Background Video */
@@ -31,7 +33,7 @@ body, html {
 
 /* Navbar */
 .navbar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	padding: 20px 40px;
@@ -39,10 +41,11 @@ body, html {
 	justify-content: space-between;
 	align-items: center;
 	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-	font-size: 24px;
+	font-size: 26px;
 	color: white;
 	font-weight: bold;
 }
@@ -50,14 +53,14 @@ body, html {
 .nav-links {
 	list-style: none;
 	display: flex;
-	gap: 22px;
+	gap: 20px;
 }
 
 .nav-links li a {
-	position: relative;
 	text-decoration: none;
 	color: white;
-	font-size: 25px;
+	font-size: 22px;
+	position: relative;
 	transition: color 0.3s ease;
 }
 
@@ -68,7 +71,7 @@ body, html {
 	bottom: -4px;
 	width: 0%;
 	height: 2px;
-	background-color: #c2185b; /* dark pink */
+	background-color: #c2185b;
 	transition: width 0.3s ease;
 }
 
@@ -80,54 +83,48 @@ body, html {
 	width: 100%;
 }
 
-/* Register/Login Button */
 .login-btn {
-	display: inline-block;
 	padding: 6px 14px;
-	background-color: rgba(142, 0, 77, 0.8);
-	/* dark pink with transparency */
+	background-color: #8e004d;
 	color: white !important;
-	border: none;
 	border-radius: 12px;
-	cursor: pointer;
-	font-size: 16px;
 	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	font-size: 16px;
 }
 
 .login-btn:hover {
-	background-color: rgba(182, 0, 99, 1);
-	color: white !important;
+	background-color: #b60063;
 }
 
-/* Center Button */
+/* Center Hero Section */
 .center-btn {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 5;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
+	padding-top: 60px;
 }
 
 .book-btn {
-	padding: 16px 40px;
-	font-size: 24px;
-	background-color: rgba(142, 0, 77, 0.8);
-	/* dark pink with transparency */
+	padding: 14px 30px;
+	font-size: 22px;
+	background-color: #8e004d;
 	color: white;
 	border: none;
 	border-radius: 12px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+	margin-top: 20px;
 }
 
 .book-btn:hover {
-	background-color: rgba(182, 0, 99, 1); /* fully opaque on hover */
+	background-color: #b60063;
 }
 
 .tagline-small {
-	font-size: 25px;
+	font-size: 22px;
 	color: white;
 	margin-bottom: 10px;
 	font-weight: 400;
@@ -135,11 +132,22 @@ body, html {
 }
 
 .tagline-large {
-	font-size: 40px;
+	font-size: 36px;
 	color: white;
-	margin-bottom: 30px;
 	font-weight: 600;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Sections */
+section {
+	min-height: 100vh;
+	padding: 100px 40px 40px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+#about, #tours, #destinations, #services, #reviews, #contact {
+	scroll-margin-top: 100px;
 }
 </style>
 </head>
@@ -148,7 +156,6 @@ body, html {
 	<!-- Background Video -->
 	<video autoplay muted loop class="bg-video">
 		<source src="home.mp4" type="video/mp4">
-		Your browser does not support the video tag.
 	</video>
 
 	<!-- Navbar -->
@@ -156,26 +163,56 @@ body, html {
 		<div class="logo">WanderNest Tours Agency</div>
 		<ul class="nav-links">
 			<li><a href="#">Home</a></li>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Tours</a></li>
-			<li><a href="#">Destinations</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Gallery</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#tours">Tours</a></li>
+			<li><a href="#destinations">Destinations</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#reviews">Reviews</a></li>
+			<li><a href="#contact">Contact</a></li>
 			<li><a href="login.jsp" class="login-btn">Login</a></li>
 		</ul>
 	</nav>
 
-	<!-- Centered Button -->
+	<!-- Hero Section -->
 	<div class="center-btn">
 		<h2 class="tagline-small">To travel is to live</h2>
 		<h1 class="tagline-large">Your Journey Begins</h1>
-		<a href="login.jsp"><button class="book-btn">Book My
-				Trip</button></a>
+		<a href="login.jsp"><button class="book-btn">Book My Trip</button></a>
 	</div>
 
+	<!-- Page Sections -->
+	<section id="about">
+		<h2>About Us</h2>
+		<p>Welcome to WanderNest - your partner for unforgettable travel
+			experiences.</p>
+	</section>
 
+	<section id="tours">
+		<h2>Our Tours</h2>
+		<p>Choose from our best packages designed for every kind of
+			traveler.</p>
+	</section>
+
+	<section id="destinations">
+		<h2>Top Destinations</h2>
+		<p>From the mountains to the beaches, we take you everywhere.</p>
+	</section>
+
+	<section id="services">
+		<h2>Our Services</h2>
+		<p>We provide tour planning, bookings, transportation, and guides.</p>
+	</section>
+
+	<section id="reviews">
+		<h2>Customer Reviews</h2>
+		<p>Our happy travelers share their amazing journey with
+			WanderNest.</p>
+	</section>
+
+	<section id="contact">
+		<h2>Contact Us</h2>
+		<p>Reach us at info@wandernest.com or call +91-12345-67890.</p>
+	</section>
 
 </body>
 </html>

@@ -1,5 +1,10 @@
+<%@page import="com.model.Tour"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,8 +187,10 @@ if (msg != null) {
 %>
 
 
+
 <body>
 	<header> Welcome, Travel Agent </header>
+
 
 	<div class="container">
 		<nav>
@@ -200,7 +207,7 @@ if (msg != null) {
 				</button>
 				<div class="dropdown-content">
 					<a href="#">Settings</a> <a href="#">Change Password</a> <a
-						href="logout.jsp">Logout</a>
+						href="welcome.html">Logout</a>
 				</div>
 			</div>
 		</nav>
@@ -213,15 +220,72 @@ if (msg != null) {
 				provide services directly from here.</p>
 		</div>
 
+
 		<div class="card">
-			<h2>Recent Activities</h2>
-			<p>No recent activity found.</p>
+			<h2>Recent Tour Activities</h2>
+
+			<%
+			List<Tour> tours = (List<Tour>) request.getAttribute("tourList");
+			System.out.println("Tour list in JSP: " + (tours != null ? tours.size() : "null"));
+
+			if (tours != null && !tours.isEmpty()) {
+			%>
+
+			<table border="1" width="100%"
+				style="border-collapse: collapse; text-align: center;">
+				<tr style="background-color: #f8bbd0;">
+					<th>Package Name</th>
+					<th>Type</th>
+					<th>Location</th>
+					<th>Price</th>
+					<th>Duration</th>
+					<th>Seats</th>
+					<th>Status</th>
+					<th>Features</th>
+					<th>Details</th>
+					<th>Actions</th>
+				</tr>
+				<%
+				for (Tour tour : tours) {
+				%>
+				<tr>
+					<td><%=tour.getName()%></td>
+					<td><%=tour.getType()%></td>
+					<td><%=tour.getLocation()%></td>
+					<td>&#8377;<%=tour.getPrice()%></td>
+					<td><%=tour.getDuration()%></td>
+					<td><%=tour.getSeats()%></td>
+					<td><%=tour.getStatus()%></td>
+					<td><%=tour.getFeatures()%></td>
+					<td><%=tour.getDetails()%></td>
+					<td><a href="#">Edit</a> | <a
+						href="deletetour?packageName=<%=tour.getName()%>"
+						onclick="return confirm('Are you sure you want to delete this tour?')">Delete</a>
+					</td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+			<%
+			} else {
+			%>
+			<p>No tour packages available.</p>
+			<%
+			}
+			%>
+
+
 		</div>
+
+
 
 		<div class="card" id="addTourForm"
 			style="max-width: 600px; margin: 0 auto;">
 			<h2>Add Tour Package</h2>
-			<form action="AddTourServlet" method="post">
+
+			<form action="addtour" method="post">
+
 				<label>Package Name</label> <input type="text" name="packageName"
 					required> <label>Package Type</label> <select
 					name="packageType" required>
@@ -232,9 +296,9 @@ if (msg != null) {
 				</select> <label>Package Location</label> <input type="text"
 					name="packageLocation" required> <label>Package
 					Price</label> <input type="number" name="packagePrice" required> <label>Duration
-					(in days)</label> <input type="number" name="duration" required> <label>Seats</label>
-				<input type="number" name="seats" required> <label>Availability</label>
-				<select name="packageType" required>
+					(in days)</label> <input type="number" name="duration" required> <label>Seats</label><input
+					type="number" name="seats" required> <label>Availability</label>
+				<select name="packagestatus" required>
 					<option value="">--Select--</option>
 					<option value="available">Available</option>
 					<option value="unavailable">Unavailable</option>
