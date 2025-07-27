@@ -1,60 +1,79 @@
-# 🌍 WanderNest Agency - Tours & Travels System🧳
+# 🌍 WanderNest Agency - Tours & Travels System 🧳
 
-Welcome to **WanderNest**, your one-stop destination for all travel bookings and wanderlust planning!  
-Built with ❤️ using modern web technologies and Java backend, this project brings dynamic user interaction and smooth travel experience together.
-
----
-
-## 🚀 Tech Stack
-
-Built using a mix of frontend and backend technologies:
-
-- 🌐 **HTML**, **CSS**, **JavaScript**
-- ☕ **Java Servlets** & **JSP**
-- 🛢️ **JDBC** (MySQL Database)
+A dynamic and responsive **Travel Booking Web Application** built using **JSP**, **Servlets**, **JDBC**, and **MySQL**. WanderNest simplifies travel management for **Admins**, **Travel Agents**, and **Customers** in a single platform.
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-✅ User Registration & Login  
-👩‍💻 Travel Agent Registration & Login
-🗺️ Travel Booking System  
-🔒 Secure Authentication  
-📊 Admin Dashboard *(coming soon)*  
-🎨 Clean and responsive UI  
-📁 Session and form handling with JSP & Servlet
+### 👤 Admin Panel (Optional)
+- View and manage all customers and travel agents
+- Approve or reject agent registrations
+- View all bookings and tours
+- Monitor activity across the system
+
+### 🧑‍💼 Travel Agent Dashboard
+- Register/Login as an agent
+- Add new tour packages
+- View, edit, and delete own tours
+- View bookings received from customers
+
+### 🧳 Customer Portal
+- Register/Login as a customer
+- Browse available tour packages
+- Book tours instantly
+- View booking history
+- Cancel existing bookings
+- Edit profile
 
 ---
 
-## ⚙️ Getting Started
+## 🛠️ Technologies Used
 
-Here’s how you can get the project running on your machine:
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** JSP, Servlet (Jakarta EE)
+- **Database:** MySQL
+- **JDBC** for database connectivity
+- **Apache Tomcat** as the server
 
-1. 📥 **Clone the repository**  
-   ```bash
-   git clone https://github.com/payal-yadav23/WanderNest-Tours-Travels.git
-   ```
-- 💼 Import into Eclipse or your favorite Java IDE
+---
 
-- As a Dynamic Web Project
+## 🗂️ Project Structure
 
-3. 🛠️ Configure MySQL database
-
-- Create necessary tables (like travel, users, etc.)
-
-- Update DB connection details in Java files
-
-4. 🌐 Run using Apache Tomcat
-
-- Deploy the project on Tomcat Server
-
-- Access it via http://localhost:8080/WanderNest-Tours-Travels
+```
+WanderNest/
+│
+├── src/
+│ ├── com.admin/ → Admin Servlets
+│ ├── com.agent/ → Agent Servlets
+│ ├── com.customer/ → Customer Servlets
+│ ├── com.model/ → JavaBeans (Tour, Booking, User etc.)
+│
+├── webapp/
+│ ├──  → Admin JSP pages
+│ ├──  → Agent JSP pages
+│ ├──  → Customer JSP pages
+│ ├──  welcome.jsp → Homepage
+│ ├──  META-INF
+│ └──  WEB-INF
+│        └── lib / → MySQL connector jar  
+│
+└── README.md → Project documentation
+```
 
 📸 Screenshots
 
-👩‍💻 Author
-Made with 💡 by Payal Yadav
-Feel free to ⭐ this repo or contribute to its growth!
+## 📸 Application Screenshots
 
+### 🏠 Homepage  
+![Homepage](screenshots/homepage.png)
+
+### 🔐 Login Page  
+![Login Page](screenshots/login.png)
+
+### 🧑‍💼 Agent Dashboard  
+![Agent Dashboard](screenshots/agent-dashboard.png)
+
+### 🧳 Customer Dashboard  
+![Customer Dashboard](screenshots/customer-dashboard.png)
 
