@@ -1,4 +1,4 @@
-package com.homepage;
+package com.customer;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,20 +13,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/fetchHomeTours")
-public class HomeServlet extends HttpServlet {
-
+@WebServlet("/customerdashboard")
+public class FetchToursForCustomerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			List<Tour> tourList = TourDao.fetchAllTours();
-			req.setAttribute("tourList", tourList);
-			RequestDispatcher rd = req.getRequestDispatcher("welcome.jsp");
-			rd.forward(req, resp);
+			List<Tour> tours = TourDao.fetchAllTours(); // ✅ fix method call
 
+			req.setAttribute("bookingList", tours); // or rename to "toursList"
+			RequestDispatcher rd = req.getRequestDispatcher("customer-dashboard.jsp");
+			rd.forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
-			req.setAttribute("error", "Unable to load tour data.");
-			req.getRequestDispatcher("welcome.jsp").forward(req, resp);
+			resp.sendRedirect("error.jsp");
 		}
 	}
 }

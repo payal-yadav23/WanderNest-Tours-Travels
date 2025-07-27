@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Register - WanderNest</title>
+<title>Customer Login - WanderNest</title>
 <style>
 body {
 	font-family: 'Poppins', sans-serif;
@@ -30,7 +30,7 @@ h1 {
 	text-align: center;
 }
 
-input, select {
+input {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -53,18 +53,12 @@ button {
 </head>
 <body>
 	<div class="form-box">
-		<h1>Customer Registration</h1>
-		<form action="registerCustomer" method="post">
-			<input type="text" name="fullName" placeholder="Full Name" required>
+		<h1>Customer Login</h1>
+		<form action="loginCustomer" method="post">
 			<input type="email" name="email" placeholder="Email Address" required>
 			<input type="password" name="password" placeholder="Password"
-				required> <select name="gender" required>
-				<option value="">Select Gender</option>
-				<option value="Male">Male</option>
-				<option value="Female">Female</option>
-				<option value="Other">Other</option>
-			</select>
-			<button type="submit">Register</button>
+				required>
+			<button type="submit">Login</button>
 		</form>
 	</div>
 </body>
