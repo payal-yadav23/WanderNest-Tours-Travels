@@ -1,4 +1,4 @@
-# 🌍 WanderNest - Tours & Travels 🧳
+# 🌍 WanderNest Agency - Tours & Travels System🧳
 
 Welcome to **WanderNest**, your one-stop destination for all travel bookings and wanderlust planning!  
 Built with ❤️ using modern web technologies and Java backend, this project brings dynamic user interaction and smooth travel experience together.
