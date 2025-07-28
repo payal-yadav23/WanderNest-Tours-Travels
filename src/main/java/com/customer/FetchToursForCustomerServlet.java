@@ -22,9 +22,11 @@ public class FetchToursForCustomerServlet extends HttpServlet {
 			req.setAttribute("bookingList", tours); // or rename to "toursList"
 			RequestDispatcher rd = req.getRequestDispatcher("customer-dashboard.jsp");
 			rd.forward(req, resp);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			resp.sendRedirect("error.jsp");
 		}
+
 	}
 }

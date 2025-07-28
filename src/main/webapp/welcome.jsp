@@ -186,10 +186,8 @@ section {
 		<ul class="nav-links">
 			<li><a href="#">Home</a></li>
 			<li><a href="#about">About Us</a></li>
-			<li><a href="#tours">Tours</a></li>
 			<li><a href="#destinations">Destinations</a></li>
 			<li><a href="#services">Services</a></li>
-			<li><a href="#reviews">Reviews</a></li>
 			<li><a href="#contact">Contact</a></li>
 			<li><a href="login.jsp" class="login-btn">Login</a></li>
 		</ul>
@@ -209,48 +207,6 @@ section {
 			experiences.</p>
 	</section>
 
-	<section id="tours">
-		<h2>Our Tours</h2>
-		<p>Choose from our best packages designed for every kind of
-			traveler.</p>
-
-		<%
-		List<Tour> tours = (List<Tour>) request.getAttribute("tourList");
-		if (tours != null && !tours.isEmpty()) {
-		%>
-		<table class="tour-table">
-			<tr>
-				<th>Package Name</th>
-				<th>Type</th>
-				<th>Location</th>
-				<th>Price</th>
-				<th>Duration</th>
-				<th>Status</th>
-			</tr>
-			<%
-			for (Tour t : tours) {
-			%>
-			<tr>
-				<td><%=t.getName()%></td>
-				<td><%=t.getType()%></td>
-				<td><%=t.getLocation()%></td>
-				<td>₹<%=t.getPrice()%></td>
-				<td><%=t.getDuration()%></td>
-				<td><%=t.getStatus()%></td>
-			</tr>
-			<%
-			}
-			%>
-		</table>
-		<%
-		} else {
-		%>
-		<p style="text-align: center; color: gray;">No tours available at
-			the moment.</p>
-		<%
-		}
-		%>
-	</section>
 
 	<section id="destinations">
 		<h2>Top Destinations</h2>
@@ -262,11 +218,6 @@ section {
 		<p>We provide tour planning, bookings, transportation, and guides.</p>
 	</section>
 
-	<section id="reviews">
-		<h2>Customer Reviews</h2>
-		<p>Our happy travelers share their amazing journey with
-			WanderNest.</p>
-	</section>
 
 	<section id="contact">
 		<h2>Contact Us</h2>

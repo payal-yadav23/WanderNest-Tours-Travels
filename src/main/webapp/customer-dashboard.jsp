@@ -19,6 +19,20 @@ body {
 	color: white;
 	text-align: center;
 	font-size: 22px;
+	position: relative;
+}
+
+.logout-btn {
+	position: absolute;
+	right: 20px;
+	top: 12px;
+	background: #ff1a75;
+	color: white;
+	padding: 8px 14px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
 }
 
 .success-msg {
@@ -26,10 +40,6 @@ body {
 	color: green;
 	font-weight: bold;
 	margin-top: 10px;
-}
-
-button {
-	font-size: 20px;
 }
 
 .nav-buttons {
@@ -46,6 +56,7 @@ button {
 	padding: 12px 20px;
 	border-radius: 5px;
 	cursor: pointer;
+	font-size: 20px;
 }
 
 .dashboard-container {
@@ -71,6 +82,7 @@ th, td {
 	border: 1px solid #cc0066;
 	padding: 10px;
 	text-align: center;
+	font-size: 18px;
 }
 
 th {
@@ -78,27 +90,19 @@ th {
 	color: #660033;
 }
 
-.logout-btn {
-	float: right;
-	margin-right: 20px;
-	background: #ff1a75;
+.book-btn {
+	background: green;
 	color: white;
-	padding: 10px 15px;
-	border-radius: 5px;
-	border: none;
-}
-
-.cancel-btn {
-	background: red;
-	color: white;
-	padding: 5px 10px;
+	padding: 6px 12px;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+	font-size: 20px;
 }
 </style>
 </head>
 <body>
+
 	<div class="navbar">
 		Welcome, Valued Customer
 		<form action="welcome.jsp" method="post" style="display: inline;">
@@ -109,14 +113,15 @@ th {
 	<div class="success-msg">Login successful!</div>
 
 	<div class="nav-buttons">
-		<button onclick="location.href='viewtours.jsp'">Browse Tours</button>
+		<button onclick="location.href='customer-dashboard.jsp'">Browse
+			Tours</button>
 		<button onclick="location.href='mybookings.jsp'">My Bookings</button>
 		<button onclick="location.href='customer-profile.jsp'">View
 			Profile</button>
 	</div>
 
 	<div class="dashboard-container">
-		<h2>My Booked Tours</h2>
+		<h2>Available Tours</h2>
 
 		<%
 		List<Tour> bookings = (List<Tour>) request.getAttribute("bookingList");
@@ -128,7 +133,7 @@ th {
 				<th>Location</th>
 				<th>Price</th>
 				<th>Status</th>
-				<th>Cancel</th>
+				<th>Book</th>
 			</tr>
 			<%
 			for (Tour tour : bookings) {
@@ -139,9 +144,9 @@ th {
 				<td>₹<%=tour.getPrice()%></td>
 				<td><%=tour.getStatus()%></td>
 				<td>
-					<form action="cancelbooking" method="post">
+					<form action="booktour" method="post">
 						<input type="hidden" name="tourName" value="<%=tour.getName()%>">
-						<button type="submit" class="cancel-btn">Cancel</button>
+						<button type="submit" class="book-btn">Book Tour</button>
 					</form>
 				</td>
 			</tr>
@@ -152,7 +157,7 @@ th {
 		<%
 		} else {
 		%>
-		<p>No bookings yet. Start exploring!</p>
+		<p>No tours found at the moment. Please check back later!</p>
 		<%
 		}
 		%>
