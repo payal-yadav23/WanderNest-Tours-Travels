@@ -24,7 +24,7 @@ public class CustomerLoginServlet extends HttpServlet {
 			if (c != null) {
 				HttpSession session = req.getSession();
 				session.setAttribute("customer", c);
-				resp.sendRedirect("customerdashboard"); // 👉 Calls your dashboard servlet
+				resp.sendRedirect("customerdashboard"); 
 			} else {
 				resp.sendRedirect("customer-login.jsp?error=invalid");
 			}

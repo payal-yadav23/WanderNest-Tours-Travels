@@ -37,7 +37,7 @@ public class TourDao {
 		return list;
 	}
 
-	// ✅ New method: fetch single tour by name
+
 	public static Tour getTourByName(String name) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/wandernest", "root", "Payal@123");
