@@ -26,6 +26,28 @@ A dynamic and responsive **Travel Booking Web Application** built using **JSP**,
 - Cancel existing bookings
 - Edit profile
 
+📸 Screenshots
+
+## 📸 Application Screenshots
+
+### 🏠 Homepage  
+![Homepage](screenshots/homepage.png)
+
+### 🔐 Login Page  
+![Login Page](screenshots/login.png)
+
+### 🧑‍💼 Agent Dashboard  
+![Agent Dashboard](screenshots/agent-dashboard.png)
+
+### 🧳 Add Tour  
+![Add Tour](screenshots/add-tour.png)
+
+### 🧑‍💼 Customer Dashboard  
+![Customer Dashboard](screenshots/customer-dashboard.png)
+
+### 🌍 Booked Tour 
+![Booked Tour](screenshots/booked-tour.png)
+
 ---
 
 ## 🛠️ Technologies Used
@@ -61,19 +83,5 @@ WanderNest/
 └── README.md → Project documentation
 ```
 
-📸 Screenshots
 
-## 📸 Application Screenshots
-
-### 🏠 Homepage  
-![Homepage](screenshots/homepage.png)
-
-### 🔐 Login Page  
-![Login Page](screenshots/login.png)
-
-### 🧑‍💼 Agent Dashboard  
-![Agent Dashboard](screenshots/agent-dashboard.png)
-
-### 🧳 Customer Dashboard  
-![Customer Dashboard](screenshots/customer-dashboard.png)
 
