@@ -8,7 +8,6 @@ A dynamic and responsive **Travel Booking Web Application** built using **JSP**,
 
 ### 👤 Admin Panel (Optional)
 - View and manage all customers and travel agents
-- Approve or reject agent registrations
 - View all bookings and tours
 - Monitor activity across the system
 
@@ -16,15 +15,11 @@ A dynamic and responsive **Travel Booking Web Application** built using **JSP**,
 - Register/Login as an agent
 - Add new tour packages
 - View, edit, and delete own tours
-- View bookings received from customers
 
 ### 🧳 Customer Portal
 - Register/Login as a customer
 - Browse available tour packages
 - Book tours instantly
-- View booking history
-- Cancel existing bookings
-- Edit profile
 
 📸 Screenshots
 
